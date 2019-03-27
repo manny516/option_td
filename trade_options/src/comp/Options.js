@@ -1,4 +1,4 @@
-import React, {Components} from 'react'
+import React, {Component} from 'react'
 
 class Options extends Component{
 
@@ -33,7 +33,9 @@ class Options extends Component{
 	}
 
 	render(){
-		return();
+		return(
+			<div> <h2> Options Trade Results  </h2> </div>
+		);
 	}
 
 
