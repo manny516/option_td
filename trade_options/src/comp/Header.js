@@ -10,12 +10,14 @@ class Header extends Component{
 
 	fetchData(symbol){
 		// The API path for the Options Trade data 
+
 		const url = `https://api.tdameritrade.com/v1/marketdata/chains?apikey=OPTIONS50&symbol=${symbol}`;
 		const options = {
 
 			methods : 'GET',
 			headers: {
 				"Authorization": "Bearer <inter Acccess token here> "
+
 			}
 		}
 
