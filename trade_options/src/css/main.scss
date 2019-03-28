@@ -1,9 +1,62 @@
-body{
-	background: #EEE;
-	color:#666;
+$primary-color : #E3E7F1;
+$second-color : #c6cbef;
+$third-color : #8186d5;
+$fourth-color : #494ca2;
+
+
+/**************************
+	Global CSS
+*************************/
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
+
+body{
+	background: #EEE;
+	color: $primary-color;
+}
+
+
+/************************
+		Ticker CSS
+************************/
 .app-banner{
 	width:100%;
 	text-align:center;
+}
+
+
+.comp-wrapper{
+	display: grid;
+	grid-template-columns : 2fr 2fr 2fr;
+	grid-colum-gap : 2%;
+	grid-row-gap: 1%;
+	padding:20px;
+
+}
+
+.ticker-names{
+	width:70%;
+}
+
+.ticker-names ul{
+	margin:0px;
+	padding:0px;
+}
+
+.ticker-names li{
+	list-style: none;
+}
+
+.ticker-names span{
+	margin-right:20px;
+	background : $third-color;
+	padding :10px;
+	display: inline-block;
+	margin-bottom :20px;
+	color : $primary-color;
 }

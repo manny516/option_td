@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './css/main.scss';
 import Header from './comp/Header';
-import Options from './comp/Options';
+import Ticker from './comp/Ticker';
 
 class App extends Component {
   render() {
@@ -15,7 +15,9 @@ class App extends Component {
 			<div className="comp-wrapper"> 
 				
 				{/* See (src/comp/Options.js) / Load Options Component Data */}
-				<Options/> 
+				<Ticker/>
+				{/*<Options/> */}
+
 			</div>
 
 		</React.Fragment>

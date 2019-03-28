@@ -1,6 +1,6 @@
 [
   {
-    "nasdaq": [
+    "NASDAQ": [
       {
         "ticker": "AABA",
         "stock_name": "Altaba Inc"
@@ -13692,7 +13692,7 @@
     ]
   },
   {
-    "amex": [
+    "AMEX": [
       {
         "ticker": "AAAU",
         "stock_name": "Perth Mint Physical Gold ETF"
