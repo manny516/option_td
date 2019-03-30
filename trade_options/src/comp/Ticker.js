@@ -45,6 +45,27 @@ class Ticker extends Component {
 				</ul> 
 			</div>
 
+			<div  className="ticker-names">
+				<h2> NYSCE </h2>
+				<hr />
+				
+				<ul> 
+					{this.nysData.map((symbol ) => {
+
+						let tickerSymbl = symbol['ticker'];
+						let stockName = symbol['stock_name'];
+						return <React.Fragment>
+								<li>
+									<span>{tickerSymbl}</span>
+									<span>{stockName}</span>
+								</li>
+							   </React.Fragment>;})
+
+					}
+				</ul> 
+			</div>
+
+
 			<div className="ticker-names">
 
 				<h2> AMEX </h2>
@@ -54,7 +75,12 @@ class Ticker extends Component {
 					{this.amexData.map((symbol ) => {
 						let tickerSymbl = symbol['ticker'];
 						let stockName = symbol['stock_name'];
-						return <React.Fragment><li>{tickerSymbl}</li>  <li>{stockName}</li></React.Fragment>;
+						return <React.Fragment>
+								<li>
+									<span>{tickerSymbl} </span>
+									<span>{stockName} </span>
+								</li> 
+							   </React.Fragment>;
 					})
 					}
 
@@ -62,21 +88,6 @@ class Ticker extends Component {
 
 			</div>
 
-			<div  className="ticker-names">
-				<h2> NYSCE </h2>
-				<hr />
-				
-				<ul> 
-					{this.nysData.map((symbol ) => {
-						
-						let tickerSymbl = symbol['ticker'];
-						let stockName = symbol['stock_name'];
-						return <React.Fragment><li>{tickerSymbl}</li>  <li>{stockName}</li></React.Fragment>;
-
-					})
-					}
-				</ul> 
-			</div>
 			</React.Fragment>
 
 		)
