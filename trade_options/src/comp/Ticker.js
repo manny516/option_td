@@ -1,16 +1,8 @@
 import React, {Component} from 'react'
-import TickerData from '../json/ticker_data.json'
+//import TickerData from '../json/ticker_data.json'
 
 
 class Ticker extends Component {
-
-	constructor(props){
-		super(props);
-		this.nasData = TickerData[0]["NASDAQ"];
-		this.amexData = TickerData[1]["AMEX"];
-		this.nysData = TickerData[2]["NYSCE"];
-		//this.exchangeTicker = this.exchangeTicker.bind(this);
-	}
 
 
 	render(){
@@ -27,7 +19,7 @@ class Ticker extends Component {
 				
 				<ul> 
 
-					{this.nasData.map((symbol ) => {
+					{this.props.NASDAQ.map((symbol ) => {
 					
 						let tickerSymbl = symbol['ticker'];
 						let stockName = symbol['stock_name'];
@@ -50,7 +42,7 @@ class Ticker extends Component {
 				<hr />
 				
 				<ul> 
-					{this.nysData.map((symbol ) => {
+					{this.props.NYSCE.map((symbol ) => {
 
 						let tickerSymbl = symbol['ticker'];
 						let stockName = symbol['stock_name'];
@@ -72,7 +64,7 @@ class Ticker extends Component {
 				<hr />
 				
 				<ul> 
-					{this.amexData.map((symbol ) => {
+					{this.props.AMEX.map((symbol ) => {
 						let tickerSymbl = symbol['ticker'];
 						let stockName = symbol['stock_name'];
 						return <React.Fragment>
