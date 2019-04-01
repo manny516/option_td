@@ -4,80 +4,28 @@ import React, {Component} from 'react'
 
 class Ticker extends Component {
 
-
 	render(){
 
 		return(
-
 
 		<React.Fragment>
 
 			<div className="ticker-names"> 
 				
-				<h2> NASDAQ </h2>
+				<h2> {this.props.exchangeName} </h2>
 				<hr />
 				
-				<ul> 
-
-					{this.props.NASDAQ.map((symbol ) => {
+				<ul> {this.props.stockTicker.map((symbol ) => {
 					
-						let tickerSymbl = symbol['ticker'];
-						let stockName = symbol['stock_name'];
-						return <React.Fragment>
-									<li> 
-										<span>{tickerSymbl}</span>  
-										<span>{stockName}</span> 
-									</li>
-								</React.Fragment>;
-
-					})
-
-					}
-
-				</ul> 
-			</div>
-
-			<div  className="ticker-names">
-				<h2> NYSCE </h2>
-				<hr />
-				
-				<ul> 
-					{this.props.NYSCE.map((symbol ) => {
-
-						let tickerSymbl = symbol['ticker'];
-						let stockName = symbol['stock_name'];
-						return <React.Fragment>
-								<li>
-									<span>{tickerSymbl}</span>
-									<span>{stockName}</span>
-								</li>
-							   </React.Fragment>;})
-
-					}
-				</ul> 
-			</div>
-
-
-			<div className="ticker-names">
-
-				<h2> AMEX </h2>
-				<hr />
-				
-				<ul> 
-					{this.props.AMEX.map((symbol ) => {
-						let tickerSymbl = symbol['ticker'];
-						let stockName = symbol['stock_name'];
-						return <React.Fragment>
-								<li>
-									<span>{tickerSymbl} </span>
-									<span>{stockName} </span>
-								</li> 
-							   </React.Fragment>;
-					})
-					}
-
-				</ul> 
-
+			let tickerSymbl = symbol['ticker'];
+			let stockName = symbol['stock_name'];
+			return <React.Fragment>
+						<li> 
+							<span>{tickerSymbl}</span>  
+							<span>{stockName}</span> 
+						</li>
+					</React.Fragment>
+		})}</ul> 
 			</div>
 
 			</React.Fragment>

@@ -7,23 +7,23 @@ class FilterSearch extends Component {
 
 	constructor(props){
 		super(props)
+
 		this.nasData = TickerData[0]["NASDAQ"];
 		this.amexData = TickerData[1]["AMEX"];
 		this.nysData = TickerData[2]["NYSCE"];
-		this.callMyName = this.callMyName.bind(this);
-	}
-
-
-	callMyName(){
-		let testName =  "New World Order";
-		return testName;
 	}
 
 	render(){
 
 		return(
 
-			<Ticker NASDAQ={this.nasData} AMEX={this.amexData} NYSCE={this.nysData} />
+			<React.Fragment>
+
+				<Ticker exchangeName="NASDAQ" stockTicker={this.nasData} />
+				<Ticker exchangeName="NYSCE" stockTicker={this.nysData} />
+				<Ticker exchangeName="AMEX" stockTicker={this.amexData} />
+
+			</React.Fragment>
 
 		)
 
