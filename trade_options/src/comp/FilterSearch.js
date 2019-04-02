@@ -19,10 +19,17 @@ class FilterSearch extends Component {
 
 			<React.Fragment>
 
-				<Ticker exchangeName="NASDAQ" stockTicker={this.nasData} />
-				<Ticker exchangeName="NYSCE" stockTicker={this.nysData} />
-				<Ticker exchangeName="AMEX" stockTicker={this.amexData} />
+				<div className="ticker-filter"> 
+					<input type="text" name="filter-search"/>
+				</div>
 
+
+				<div className="ticker-display">
+					<Ticker exchangeName="NASDAQ" stockTicker={this.nasData} />
+					<Ticker exchangeName="NYSCE" stockTicker={this.nysData} />
+					<Ticker exchangeName="AMEX" stockTicker={this.amexData} />
+				</div>
+				
 			</React.Fragment>
 
 		)

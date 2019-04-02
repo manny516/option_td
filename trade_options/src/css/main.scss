@@ -30,7 +30,7 @@ body{
 }
 
 
-.comp-wrapper{
+.ticker-display{
 	display: grid;
 	grid-template-columns : 2fr 2fr 2fr;
 	grid-colum-gap : 2%;
@@ -64,3 +64,25 @@ body{
 	margin-bottom :20px;
 	color : $primary-color;
 }
+
+
+
+
+/***********************
+		Ticker search
+***********************/
+
+	.ticker-filter{ 
+		clear:both; 
+		text-align: center;
+	}
+
+	.ticker-filter input{
+		width:60%;
+		height:60px;
+		border-radius: 10px;
+		border:1px solid $second-color;
+		font-size: 35px;
+		color:#666;
+	}
+
