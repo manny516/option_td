@@ -46,8 +46,6 @@ class FilterSearch extends Component {
 		return nasSearchData;
 		//console.log(amexSearchData);
 		//console.log(nysceSearchData);
-
-
 	}
 
 	render(){
@@ -55,11 +53,9 @@ class FilterSearch extends Component {
 		return(
 
 			<React.Fragment>
-				<ul>
-					<li> </li>
-				</ul>
+
 				<div className="ticker-filter"> 
-					<input type="text" placeholder={this.state.value} onChange={this.handleChange} onKeyUp={this.outPut} name="filter-search"/>
+					<input type="text" name="filter-search"/>
 				</div>
 
 
@@ -68,7 +64,7 @@ class FilterSearch extends Component {
 					<Ticker exchangeName="NYSCE" stockTicker={this.state.nysce} />
 					<Ticker exchangeName="AMEX" stockTicker={this.state.amex} />
 				</div>
-
+				
 			</React.Fragment>
 
 		)
