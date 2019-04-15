@@ -8,32 +8,44 @@ class FilterSearch extends Component {
 	constructor(props){
 		super(props)
 
-		this.state = {value : "Search Stock"}
-		this.nasData = TickerData[0]["NASDAQ"];
-		this.amexData = TickerData[1]["AMEX"];
-		this.nysData = TickerData[2]["NYSCE"];
+		this.state = {
+			value : "Search Stock",
+			nasdaq : TickerData[0]["NASDAQ"],
+			amex: TickerData[1]["AMEX"],
+			nysce : TickerData[2]["NYSCE"]
+
+		}	
+
 		this.handleChange = this.handleChange.bind(this);
 		this.outPut = this.outPut.bind(this);
 	}
-
-
-
 	
-
+ 
 	handleChange(e){
 		let state = this.setState( {value : e.target.value} );
 		return state;
 	}
 
 	outPut(){	
+		
+		let regExp = new RegExp(this.state.value,"i");
+		
+		let nasSearchData = this.state.nasdaq.map( 
+			function(symbl){
+				let tickerName = symbl['ticker'];
 
-		console.log(this.state.value);
+				if(tickerName.search(regExp) !== -1 ){
+					
+					return <li> {tickerName} </li>;
+				}else{
+					return '';
+				}
+				
+			});
 
-		if(this.state.value === "AAPL"){
-			console.log("It's a Match");
-		}else{
-			console.log("No MAtch");	
-		}
+		return nasSearchData;
+		//console.log(amexSearchData);
+		//console.log(nysceSearchData);
 
 
 	}
@@ -43,15 +55,18 @@ class FilterSearch extends Component {
 		return(
 
 			<React.Fragment>
+				<ul>
+					<li> </li>
+				</ul>
 				<div className="ticker-filter"> 
 					<input type="text" placeholder={this.state.value} onChange={this.handleChange} onKeyUp={this.outPut} name="filter-search"/>
 				</div>
 
 
 				<div className="ticker-display">
-					<Ticker exchangeName="NASDAQ" stockTicker={this.nasData} />
-					<Ticker exchangeName="NYSCE" stockTicker={this.nysData} />
-					<Ticker exchangeName="AMEX" stockTicker={this.amexData} />
+					<Ticker exchangeName="NASDAQ"stockTicker={this.state.nasdaq} />
+					<Ticker exchangeName="NYSCE" stockTicker={this.state.nysce} />
+					<Ticker exchangeName="AMEX" stockTicker={this.state.amex} />
 				</div>
 
 			</React.Fragment>
