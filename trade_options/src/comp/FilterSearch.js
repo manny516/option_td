@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Ticker from './Ticker';
+//import Ticker from './Ticker';
 import TickerData from '../json/ticker_data.json'
 
 
@@ -26,6 +26,7 @@ class FilterSearch extends Component {
 		return state;
 	}
 
+
 	outPut(){	
 		
 		let regExp = new RegExp(this.state.value,"i");
@@ -43,9 +44,7 @@ class FilterSearch extends Component {
 				
 			});
 
-		console.log(nasSearchData);
-		//console.log(amexSearchData);
-		//console.log(nysceSearchData);
+		return nasSearchData
 
 
 	}
@@ -55,17 +54,11 @@ class FilterSearch extends Component {
 		return(
 
 			<React.Fragment>
-				
-				<div className="ticker-filter"> 
+				<div className="ticker-filter"> 	
 					<input type="text" placeholder={this.state.value} onChange={this.handleChange} onKeyUp={this.outPut} name="filter-search"/>
 				</div>
-
-
-				<div className="ticker-display">
-					<Ticker exchangeName="NASDAQ"stockTicker={this.state.nasdaq} />
-					<Ticker exchangeName="NYSCE" stockTicker={this.state.nysce} />
-					<Ticker exchangeName="AMEX" stockTicker={this.state.amex} />
-				</div>
+				
+				<p>{this.outPut()} </p>
 
 			</React.Fragment>
 
