@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-//import Ticker from './Ticker';
+import Ticker from './Ticker';
 import TickerData from '../json/ticker_data.json'
 
 
@@ -34,11 +34,18 @@ class FilterSearch extends Component {
 		let nasSearchData = this.state.nasdaq.map( 
 			function(symbl){
 				let tickerName = symbl['ticker'];
+				let stockName = symbl['stock_name'];
 
 				if(tickerName.search(regExp) !== -1 ){
 					
-					return <li> {tickerName} </li>;
-				}else{
+					return <React.Fragment>
+								<li> 
+									<span>{tickerName}</span>  
+									<span>{stockName}</span> 
+								</li>
+							</React.Fragment>;
+					}else{
+
 					return '';
 				}
 				
@@ -57,8 +64,9 @@ class FilterSearch extends Component {
 				<div className="ticker-filter"> 	
 					<input type="text" placeholder={this.state.value} onChange={this.handleChange} onKeyUp={this.outPut} name="filter-search"/>
 				</div>
-				
-				<p>{this.outPut()} </p>
+
+				{/*<p>{this.outPut()} </p>*/}
+				<Ticker theData={this.outPut()}/>
 
 			</React.Fragment>
 

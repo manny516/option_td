@@ -28,7 +28,7 @@ class Ticker extends Component {
 
 					<hr />
 					
-					<ul> 
+					{/*<ul> 
 
 						{this.nasData.map((symbol ) => {
 						
@@ -45,7 +45,9 @@ class Ticker extends Component {
 
 						}
 
-					</ul> 
+					</ul> */}
+
+					{this.props.theData}
 				</div>
 
 				<div  className="ticker-names">
