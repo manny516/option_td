@@ -17,75 +17,83 @@ class Ticker extends Component {
 
 		return(
 
-
 		<React.Fragment>
 
-			<div className="ticker-names"> 
-				
-				<h2> NASDAQ </h2>
-				<hr />
-				
-				<ul> 
+			<div className="ticker-display">
+			
 
-					{this.nasData.map((symbol ) => {
+				<div className="ticker-names"> 
 					
-						let tickerSymbl = symbol['ticker'];
-						let stockName = symbol['stock_name'];
-						return <React.Fragment>
-									<li> 
-										<span>{tickerSymbl}</span>  
-										<span>{stockName}</span> 
+					<h2> NASDAQ </h2>
+
+					<hr />
+					
+					{/*<ul> 
+
+						{this.nasData.map((symbol ) => {
+						
+							let tickerSymbl = symbol['ticker'];
+							let stockName = symbol['stock_name'];
+							return <React.Fragment>
+										<li> 
+											<span>{tickerSymbl}</span>  
+											<span>{stockName}</span> 
+										</li>
+									</React.Fragment>;
+
+						})
+
+						}
+
+					</ul> */}
+
+					{this.props.theData}
+				</div>
+
+				<div  className="ticker-names">
+					<h2> NYSCE </h2>
+
+					<hr />
+					
+					<ul> 
+						{this.nysData.map((symbol ) => {
+
+							let tickerSymbl = symbol['ticker'];
+							let stockName = symbol['stock_name'];
+							return <React.Fragment>
+									<li>
+										<span>{tickerSymbl}</span>
+										<span>{stockName}</span>
 									</li>
-								</React.Fragment>;
+								   </React.Fragment>;})
 
-					})
-
-					}
-
-				</ul> 
-			</div>
-
-			<div  className="ticker-names">
-				<h2> NYSCE </h2>
-				<hr />
-				
-				<ul> 
-					{this.nysData.map((symbol ) => {
-
-						let tickerSymbl = symbol['ticker'];
-						let stockName = symbol['stock_name'];
-						return <React.Fragment>
-								<li>
-									<span>{tickerSymbl}</span>
-									<span>{stockName}</span>
-								</li>
-							   </React.Fragment>;})
-
-					}
-				</ul> 
-			</div>
+						}
+					</ul> 
+				</div>
 
 
-			<div className="ticker-names">
+				<div className="ticker-names">
 
-				<h2> AMEX </h2>
-				<hr />
-				
-				<ul> 
-					{this.amexData.map((symbol ) => {
-						let tickerSymbl = symbol['ticker'];
-						let stockName = symbol['stock_name'];
-						return <React.Fragment>
-								<li>
-									<span>{tickerSymbl} </span>
-									<span>{stockName} </span>
-								</li> 
-							   </React.Fragment>;
-					})
-					}
+					<h2> AMEX </h2>
 
-				</ul> 
+					<hr />
+					
+					<ul> 
+						{this.amexData.map((symbol ) => {
+							let tickerSymbl = symbol['ticker'];
+							let stockName = symbol['stock_name'];
+							return <React.Fragment>
+									<li>
+										<span>{tickerSymbl} </span>
+										<span>{stockName} </span>
+									</li> 
+								   </React.Fragment>;
+						})
+						}
 
+					</ul> 
+
+				</div>
 			</div>
 
 			</React.Fragment>

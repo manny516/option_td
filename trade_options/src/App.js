@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './css/main.scss';
 import Header from './comp/Header';
-import Ticker from './comp/Ticker';
+//import Ticker from './comp/Ticker';
+import FilterSearch from './comp/FilterSearch';
 
 class App extends Component {
   render() {
@@ -14,8 +15,9 @@ class App extends Component {
 
 			<div className="comp-wrapper"> 
 				
+				<FilterSearch />
 				{/* See (src/comp/Options.js) / Load Options Component Data */}
-				<Ticker/>
+			
 				{/*<Options/> */}
 
 			</div>
