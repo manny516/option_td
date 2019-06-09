@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
+import TickerData from '../json/ticker_data.json';
 import Ticker from './Ticker';
-import TickerData from '../json/ticker_data.json'
+
 
 
 class FilterSearch extends Component {
@@ -17,7 +18,9 @@ class FilterSearch extends Component {
 		}	
 
 		this.handleChange = this.handleChange.bind(this);
-		this.outPut = this.outPut.bind(this);
+		this.outPutNas = this.outPutNas.bind(this);
+		this.outPutNYSE = this.outPutNYSE.bind(this);
+		this.outPutAMEX = this.outPutAMEX.bind(this);
 	}
 	
  
@@ -27,10 +30,10 @@ class FilterSearch extends Component {
 	}
 
 
-	outPut(){	
+	outPutNas(){	
 		
 		let regExp = new RegExp(this.state.value,"i");
-		
+
 		let nasSearchData = this.state.nasdaq.map( 
 			function(symbl){
 				let tickerName = symbl['ticker'];
@@ -51,7 +54,64 @@ class FilterSearch extends Component {
 				
 			});
 
-		return nasSearchData
+		return nasSearchData;
+	}
+
+
+	outPutNYSE(){	
+		
+		let regExp = new RegExp(this.state.value,"i");
+
+		
+		let NYSESearchData = this.state.nysce.map( 
+			function(symbl){
+				let tickerName = symbl['ticker'];
+				let stockName = symbl['stock_name'];
+
+				if(tickerName.search(regExp) !== -1 ){
+					
+					return <React.Fragment>
+								<li> 
+									<span>{tickerName}</span>  
+									<span>{stockName}</span> 
+								</li>
+							</React.Fragment>;
+					}else{
+
+					return '';
+				}
+				
+			});
+
+		return NYSESearchData;
+	}
+
+	outPutAMEX(){	
+		
+		let regExp = new RegExp(this.state.value,"i");
+
+		
+		let AMEXSearchData = this.state.amex.map( 
+			function(symbl){
+				let tickerName = symbl['ticker'];
+				let stockName = symbl['stock_name'];
+
+				if(tickerName.search(regExp) !== -1 ){
+					
+					return <React.Fragment>
+								<li> 
+									<span>{tickerName}</span>  
+									<span>{stockName}</span> 
+								</li>
+							</React.Fragment>;
+					}else{
+
+					return '';
+				}
+				
+			});
+
+		return AMEXSearchData;
 
 
 	}
@@ -61,12 +121,13 @@ class FilterSearch extends Component {
 		return(
 
 			<React.Fragment>
-				<div className="ticker-filter"> 	
+
+
+				<div className="search-input">
 					<input type="text" placeholder={this.state.value} onChange={this.handleChange} onKeyUp={this.outPut} name="filter-search"/>
 				</div>
 
-				{/*<p>{this.outPut()} </p>*/}
-				<Ticker theData={this.outPut()}/>
+				<Ticker nasData={this.outPutNas()}/>
 
 			</React.Fragment>
 
