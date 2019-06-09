@@ -126,8 +126,7 @@ class FilterSearch extends Component {
 				<div className="search-input">
 					<input type="text" placeholder={this.state.value} onChange={this.handleChange} onKeyUp={this.outPut} name="filter-search"/>
 				</div>
-
-				<Ticker nasData={this.outPutNas()}/>
+				<Ticker nasData={this.outPutNas()} nysceData={this.outPutNYSE()}  amexData={this.outPutAMEX()}/>
 
 			</React.Fragment>
 

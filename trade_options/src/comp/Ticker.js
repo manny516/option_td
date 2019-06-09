@@ -27,9 +27,30 @@ class Ticker extends Component {
 					<h2> NASDAQ </h2>
 
 					<hr />
-
 					{this.props.nasData}
 				</div>
+
+				<div className="ticker-names">
+
+					<h2> NYSCE </h2>
+
+					<hr />
+
+					{this.props.nysceData}
+
+				</div>
+
+				<div className="ticker-names">
+
+					<h2> AMEX </h2>
+
+					<hr />
+
+					{this.props.amexData}
+
+				</div>
+
+
 				</div>
 
 			</React.Fragment>
