@@ -42,34 +42,28 @@ body{
 .ticker-names{
 	width:100%;
 	font-size: 0.8em;
-
-	ul{
-		margin:0px;
-		padding:0px;
-
-
-		li{
-
-			list-style: none;
-			border-bottom: 3px solid $third-color;
-			margin-bottom: 20px;
-			cursor: pointer;
-
-		}
-	}
-
-
-	span{
-		margin-right:20px;
-		background : $third-color;
-		padding :10px;
-		display: inline-block;
-		margin-bottom :20px;
-		color : $primary-color;
-	}
-
 }
 
+.ticker-names ul{
+	margin:0px;
+	padding:0px;
+}
+
+.ticker-names li{
+	list-style: none;
+	border-bottom: 3px solid $third-color;
+	margin-bottom: 20px;
+	cursor: pointer;
+}
+
+.ticker-names span{
+	margin-right:20px;
+	background : $third-color;
+	padding :10px;
+	display: inline-block;
+	margin-bottom :20px;
+	color : $primary-color;
+}
 
 
 
@@ -79,18 +73,16 @@ body{
 ***********************/
 
 	.ticker-filter{ 
-
 		clear:both; 
 		text-align: center;
+	}
 
-		input{
-			width:60%;
-			height:60px;
-			border-radius: 10px;
-			border:1px solid $second-color;
-			font-size: 35px;
-			color:#666;
-		}
-		
+	.ticker-filter input{
+		width:60%;
+		height:60px;
+		border-radius: 10px;
+		border:1px solid $second-color;
+		font-size: 35px;
+		color:#666;
 	}
 
